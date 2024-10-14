@@ -13,6 +13,19 @@
 # - In case of Empty input string, returns None
 # - Space characters are missing from output
 
+input_string = ("De a bikini felsőt már lazán dobja hátra A vitorláson amin elmegy Afrikába")
 
-def get_frequency(input_string:str) -> dict:
-    pass
+def get_frequency(input_string):
+    if input_string is None or len(input_string)==0:
+        return None
+    result = {}
+    for i in input_string:
+        if i != ' ':
+            if i in result:
+                result[i] += 1
+            else:
+                result[i] = 1
+    return result
+
+
+print(get_frequency(input_string))
